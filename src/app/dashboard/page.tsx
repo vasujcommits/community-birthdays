@@ -12,12 +12,14 @@ import { randomBytes } from "crypto";
 async function getOrCreateShareToken(userId: string): Promise<string> {
   const user = await prisma.user.findUnique({
     where: { id: userId },
-    select: { shareToken: true },
+    select: { shareToken: true, name: true },
   });
 
-  if (user?.shareToken) return user.shareToken;
+  // Regenerate if token is missing or is the old format (no hyphen = no name prefix)
+  if (user?.shareToken && user.shareToken.includes("-")) return user.shareToken;
 
-  const token = randomBytes(8).toString("hex");
+  const firstName = (user?.name ?? "friend").split(" ")[0].toLowerCase().replace(/[^a-z0-9]/g, "");
+  const token = `${firstName}-${randomBytes(4).toString("hex")}`;
   await prisma.user.update({ where: { id: userId }, data: { shareToken: token } });
   return token;
 }
