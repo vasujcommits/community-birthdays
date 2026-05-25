@@ -15,11 +15,16 @@ async function getOrCreateShareToken(userId: string): Promise<string> {
     select: { shareToken: true, name: true },
   });
 
-  // Regenerate if token is missing or is the old format (no hyphen = no name prefix)
-  if (user?.shareToken && user.shareToken.includes("-")) return user.shareToken;
-
   const firstName = (user?.name ?? "friend").split(" ")[0].toLowerCase().replace(/[^a-z0-9]/g, "");
-  const token = `${firstName}-${randomBytes(4).toString("hex")}`;
+  const desired = `${firstName}-friend-bday-request`;
+
+  // Already has the correct token
+  if (user?.shareToken === desired) return desired;
+
+  // Try to claim the clean token; if another user has it, append a short disambiguator
+  const existing = await prisma.user.findUnique({ where: { shareToken: desired } });
+  const token = existing ? `${desired}-${randomBytes(2).toString("hex")}` : desired;
+
   await prisma.user.update({ where: { id: userId }, data: { shareToken: token } });
   return token;
 }
