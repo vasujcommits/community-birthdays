@@ -28,7 +28,7 @@ export default async function ImportPage() {
             Import your contacts.
           </h1>
           <p className="text-[14px] text-black/50 font-light leading-relaxed max-w-prose">
-            Select the people you want to track. If any of them already have a BirthdayTracker
+            Select the people you want to track. If any of them already have a Community Birthdays
             account, their birthday and gift wishes will be pulled in automatically.
           </p>
         </div>

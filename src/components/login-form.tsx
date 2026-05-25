@@ -64,9 +64,14 @@ export function LoginForm() {
           >
             {pending ? "Signing in…" : "Sign in"}
           </button>
-          <Link href="/signup" className="text-[12px] text-black/40 hover:text-black transition-colors">
-            Create an account
-          </Link>
+          <div className="flex flex-col items-end gap-2">
+            <Link href="/signup" className="text-[12px] text-black/40 hover:text-black transition-colors">
+              Create an account
+            </Link>
+            <Link href="/forgot-password" className="text-[12px] text-black/30 hover:text-black transition-colors">
+              Forgot password?
+            </Link>
+          </div>
         </div>
       </form>
 

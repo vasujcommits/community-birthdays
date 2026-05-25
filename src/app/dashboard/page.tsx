@@ -60,7 +60,7 @@ export default async function DashboardPage({
     <div className="min-h-screen bg-white text-black flex flex-col">
       {/* Nav */}
       <header className="flex items-center justify-between px-8 py-5 border-b border-black/10">
-        <span className="text-[13px] font-medium tracking-widest uppercase">BirthdayTracker</span>
+        <span className="text-[13px] font-medium tracking-widest uppercase">Community Birthdays</span>
         <div className="flex items-center gap-6">
           <Link href="/profile" className="text-[13px] text-black/40 hover:text-black transition-colors hidden sm:block">
             {session.user.name}

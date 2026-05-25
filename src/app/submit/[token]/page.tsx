@@ -37,7 +37,7 @@ export default async function SubmitPage({
   return (
     <div className="min-h-screen bg-white text-black flex flex-col">
       <header className="flex items-center justify-between px-8 py-5 border-b border-black/10">
-        <span className="text-[13px] font-medium tracking-widest uppercase">BirthdayTracker</span>
+        <span className="text-[13px] font-medium tracking-widest uppercase">Community Birthdays</span>
       </header>
 
       <div className="flex-1 flex">
@@ -51,7 +51,7 @@ export default async function SubmitPage({
           </h1>
 
           <p className="text-[13px] text-black/50 font-light mb-12 leading-relaxed">
-            {ownerName} uses BirthdayTracker to remember the people they care about.
+            {ownerName} uses Community Birthdays to remember the people they care about.
             Enter your details below and they'll never forget your birthday again.
           </p>
 

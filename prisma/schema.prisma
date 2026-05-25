@@ -77,6 +77,14 @@ model Person {
   updatedAt     DateTime  @updatedAt
 }
 
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expires   DateTime
+  createdAt DateTime @default(now())
+}
+
 model Note {
   id        String   @id @default(cuid())
   content   String

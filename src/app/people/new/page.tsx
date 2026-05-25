@@ -12,7 +12,7 @@ export default async function NewPersonPage() {
   return (
     <div className="min-h-screen bg-white text-black flex flex-col">
       <header className="flex items-center justify-between px-8 py-5 border-b border-black/10">
-        <span className="text-[13px] font-medium tracking-widest uppercase">BirthdayTracker</span>
+        <span className="text-[13px] font-medium tracking-widest uppercase">Community Birthdays</span>
         <Link href="/dashboard" className="text-[13px] text-black/40 hover:text-black transition-colors">
           ← Dashboard
         </Link>

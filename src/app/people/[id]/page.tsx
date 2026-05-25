@@ -85,7 +85,7 @@ export default async function PersonPage({ params }: { params: { id: string } })
           </div>
         )}
 
-        {/* Profile wishes (from their BirthdayTracker account) */}
+        {/* Profile wishes (from their Community Birthdays account) */}
         {person.profileUser?.wishes && (
           <div className="mb-16 border border-black/10 px-8 py-6">
             <p className="text-[11px] tracking-[0.2em] uppercase text-black/40 mb-3">

@@ -10,7 +10,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "BirthdayTracker — Never miss a birthday",
+  title: "Community Birthdays — Never miss a birthday",
   description: "Track birthdays for everyone you care about, all in one place.",
 };
 

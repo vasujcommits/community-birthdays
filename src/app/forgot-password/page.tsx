@@ -1,11 +1,7 @@
 import Link from "next/link";
-import { LoginForm } from "@/components/login-form";
+import { ForgotPasswordForm } from "@/components/forgot-password-form";
 
-export default function LoginPage({
-  searchParams,
-}: {
-  searchParams: { welcome?: string; reset?: string };
-}) {
+export default function ForgotPasswordPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white text-black">
       <header className="flex items-center justify-between px-8 py-5 border-b border-black/10">
@@ -16,26 +12,14 @@ export default function LoginPage({
 
       <div className="flex-1 flex">
         <div className="flex-1 flex flex-col justify-center px-8 sm:px-20 py-20 max-w-xl">
-          <p className="text-[11px] tracking-[0.2em] uppercase text-black/40 mb-8">Sign in</p>
-
+          <p className="text-[11px] tracking-[0.2em] uppercase text-black/40 mb-8">Reset password</p>
           <h1 className="text-[clamp(2.5rem,5vw,4rem)] font-light leading-[1.05] tracking-[-0.03em] mb-4">
-            Welcome back.
+            Forgot your<br />password?
           </h1>
-
-          {searchParams.welcome && (
-            <p className="text-[13px] text-black/50 mb-8">
-              Account created — sign in to get started.
-            </p>
-          )}
-          {searchParams.reset && (
-            <p className="text-[13px] text-black/50 mb-8">
-              Password updated — sign in with your new password.
-            </p>
-          )}
-
-          <div className="mt-6">
-            <LoginForm />
-          </div>
+          <p className="text-[13px] text-black/50 font-light mb-10 leading-relaxed">
+            Enter your email and we'll send you a link to set a new one.
+          </p>
+          <ForgotPasswordForm />
         </div>
 
         <div className="hidden lg:flex flex-1 border-l border-black/10 items-end p-16 bg-[#f5f5f3]">

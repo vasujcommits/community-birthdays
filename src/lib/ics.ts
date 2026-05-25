@@ -51,7 +51,7 @@ export function generateICS(events: BirthdayEvent[], calName = "Birthdays"): str
   return [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//BirthdayTracker//EN",
+    "PRODID:-//CommunityBirthdays//EN",
     "CALSCALE:GREGORIAN",
     "METHOD:PUBLISH",
     `X-WR-CALNAME:${esc(calName)}`,

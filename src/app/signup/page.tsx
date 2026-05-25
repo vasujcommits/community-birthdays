@@ -6,7 +6,7 @@ export default function SignupPage() {
     <div className="min-h-screen flex flex-col bg-white text-black">
       <header className="flex items-center justify-between px-8 py-5 border-b border-black/10">
         <Link href="/" className="text-[13px] font-medium tracking-widest uppercase hover:text-black/50 transition-colors">
-          BirthdayTracker
+          Community Birthdays
         </Link>
         <Link href="/login" className="text-[13px] text-black/40 hover:text-black transition-colors">
           Sign in
